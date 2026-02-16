@@ -75,7 +75,7 @@ if st.session_state.stage == "start":
             st.error("Username을 입력해주세요.")
             st.stop()
 
-        today = datetime.now().strftime("%y%m%d_%h%m")
+        today = datetime.now().strftime("%y%m%d_%H%M")
         st.session_state.username = f"{today}_{st.session_state.username}"
         st.session_state.stage = "exp_intro"
         st.rerun()
