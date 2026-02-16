@@ -28,7 +28,7 @@ Q_HIVAU = {
 
     "Judgment": [
         "What types of anomalies are shown in the video clip?\t( 영상 클립에서 어떤 종류의 이상 행동이 보여졌나요? )",
-        "Are there any anomaly events detected in the video?\t( Are there any anomaly events detected in the video? )",
+        "Are there any anomaly events detected in the video?\t( 이 영상에서 이상 행동이 탐지되었나요? )",
         "Detect and classify the anomaly events in the video.\t( 영상에서 이상 행동을 탐지하고 분류해 주세요. )",
         "Identify any abnormal behaviors depicted in the video.\t( 영상에 묘사된 비정상 행동을 식별해 주세요. )",
         "Determine whether there are anomaly events in the video and the specific name of the anomaly.\t( 영상에 이상 행동이 존재하는지 판단하고, 해당 이상 행동의 구체적인 명칭을 제시해 주세요. )",
@@ -43,8 +43,8 @@ Q_HIVAU = {
         "Describe the anomaly events observed in the video.\t( 영상에서 관찰된 이상 행동을 설명하세요. )",
         "Could you describe the anomaly events observed in the video?\t( 영상에서 관찰된 이상 행동을 설명해 주세요. )",
         "Could you specify the anomaly events present in the video?\t( 영상에 존재하는 이상 행동을 구체적으로 명시해 주세요. )",
-        "Give a description of the detected anomaly events in this video.\t( 이 영상에서 탐지된 이상 행동에 대해 설명해 주세요. )",
-        "Could you give a description of the anomaly events in the video?\t( 이 영상에서 탐지된 이상 행동에 대해 설명히세요. )",
+        "Give a description of the detected anomaly events in this video.\t( 이 영상에서 탐지된 이상 행동에 대해 설명하세요. )",
+        "Could you give a description of the anomaly events in the video?\t( 이 영상에서 탐지된 이상 행동에 대해 설명해 주세요. )",
         "Provide a summary of the anomaly events in the video.\t( 영상에 나타난 이상 행동을 요약하세요. )",
         "Could you provide a summary of the anomaly events in this video?\t( 이 영상에서 나타난 이상 행동을 요약해 주세요. )",
         "What details can you provide about the anomaly in the video?\t( 영상 속 이상 행동에 대해 어떤 세부 정보를 제공할 수 있나요? )",
@@ -102,7 +102,7 @@ Q_SeQA = {
         "Choose one response option—(dispatch / remote verification / continue monitoring)—and explain why.\t( 출동 / 원격 확인 / 계속 모니터링) 중 하나의 대응 옵션을 선택하고 그 이유를 설명하세요. )",
         "To rule out the possibility of a false alarm, list three additional points the operator should check.\t( 오경보 가능성을 배제하기 위해, 관리자가 확인해야 할 추가 사항 세 가지를 나열하세요. )",
         "Based on the provided frames, summarize how the incident unfolds using the following stages: (1) Early signs (2) Onset (3) Escalation / continuation (4) Resolution\t( 제공된 프레임을 기반으로 다음 단계로 사건이 어떻게 전개되는지 요약하세요: (1) 초기 징후 (2) 발병 (3) 악화 / 지속 (4) 해결 )",
-        "In three lines, summarize the “normal operating conditions” observed in this video, focusing on people and the surrounding environment.\t( 세 줄로 이 영상에서 관찰된 “정상 운영 조건”을 요약하세요, 사람과 주변 환경에 초점을 맞춰서. )",
+        "In three lines, summarize the “normal operating conditions” observed in this video, focusing on people and the surrounding environment.\t( 사람과 주변 환경에 초점을두어 영상에서 관찰된 정상 운영 조건을 세 줄로 요약하세요. )",
         "Even if it appears normal right now, list 1–3 potential risks that could become dangerous over time. If none, write “None.”\t( 지금은 정상으로 보이더라도, 시간이 지남에 따라 위험해질 수 있는 잠재적 위험 요소 1–3개를 나열하세요. 없다면 “없음”이라고 작성하세요. )",
         "From a security/safety monitoring perspective, choose whether the provided frame is normal or anomalous, then write a one-sentence caption that follows this format: [Label] (1) People/behavior (2) Surroundings / environment (3) One piece of evidence (Normal or Anomalous)\t( 보안/안전 모니터링 관점에서 제공된 프레임이 정상인지 비정상인지 선택한 다음, 다음 형식에 따라 한 문장으로 캡션을 작성하세요: [라벨] (1) 사람/행동 (2) 주변 환경 (3) 한 가지 증거 (정상 또는 비정상) )"
     ]
