@@ -99,7 +99,7 @@ Q_SeQA = {
         "Assess the severity as low/medium/high and explain the rationale. \t( 심각도를 낮음/중간/높음으로 평가하고 그 근거를 설명하세요. )",
         "Explain what makes this abnormal compared to normal footage, and provide supporting evidence.\t( 정상 영상과 비교하여 이것이 비정상인 이유를 설명하고, 근거를 제시하세요. )",
         "Select one event type to record in the surveillance log for this incident, and briefly justify your choice.\t( 이 사건에 대해 보안 로그에 기록할 이벤트 유형을 하나 선택하고, 간단히 선택 이유를 설명하세요. )",
-        "Choose one response option—(dispatch / remote verification / continue monitoring)—and explain why.\t( 출동 / 원격 확인 / 계속 모니터링) 중 하나의 대응 옵션을 선택하고 그 이유를 설명하세요. )",
+        "Choose one response option—(dispatch / remote verification / continue monitoring)—and explain why.\t( (출동 / 원격 확인 / 계속 모니터링) 중 하나의 대응 옵션을 선택하고 그 이유를 설명하세요. )",
         "To rule out the possibility of a false alarm, list three additional points the operator should check.\t( 오경보 가능성을 배제하기 위해, 관리자가 확인해야 할 추가 사항 세 가지를 나열하세요. )",
         "Based on the provided frames, summarize how the incident unfolds using the following stages: (1) Early signs (2) Onset (3) Escalation / continuation (4) Resolution\t( 제공된 프레임을 기반으로 다음 단계로 사건이 어떻게 전개되는지 요약하세요: (1) 초기 징후 (2) 발병 (3) 악화 / 지속 (4) 해결 )",
         "In three lines, summarize the “normal operating conditions” observed in this video, focusing on people and the surrounding environment.\t( 사람과 주변 환경에 초점을두어 영상에서 관찰된 정상 운영 조건을 세 줄로 요약하세요. )",
