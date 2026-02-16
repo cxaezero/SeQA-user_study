@@ -388,20 +388,6 @@ elif st.session_state.stage == "mos_test":
 # -------------------------------
 # 종료 페이지
 # -------------------------------
-elif st.session_state.stage == "done":
-
-    st.title("실험이 완료되었습니다.")
-    st.write("참여해주셔서 감사합니다.")
-
-    final_output = {
-        "ab_test": st.session_state.ab_results,
-        "mos": st.session_state.mos_results
-    }
-
-    with open(st.session_state.result_path, "w") as f:
-        json.dump(final_output, f, indent=4, ensure_ascii=False)
-
-    st.success("결과가 저장되었습니다.")
 
 elif st.session_state.stage == "done":
 
