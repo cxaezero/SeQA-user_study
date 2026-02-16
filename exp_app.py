@@ -9,6 +9,12 @@ from utils import Q_HIVAU, Q_SeQA, AB_CRITERIA, format_ab_round
 
 st.set_page_config(page_title="User Study", layout="wide")
 
+@st.cache_resource
+def get_supabase():
+    return create_client(st.secrets["SUPABASE_URL"],
+                         st.secrets["SUPABASE_KEY"])
+
+
 # -------------------------------
 # 초기 세션 설정
 # -------------------------------
@@ -75,7 +81,7 @@ if st.session_state.stage == "start":
             st.error("Username을 입력해주세요.")
             st.stop()
 
-        today = datetime.now().strftime("%y%m%d_%H%M")
+        today = datetime.now().strftime("%y%m%d_%H%M%S")
         st.session_state.username = f"{today}_{st.session_state.username}"
         st.session_state.stage = "exp_intro"
         st.rerun()
@@ -378,7 +384,6 @@ elif st.session_state.stage == "mos_test":
 # -------------------------------
 # 종료 페이지
 # -------------------------------
-
 elif st.session_state.stage == "done":
 
     st.title("실험이 완료되었습니다.")
@@ -389,18 +394,17 @@ elif st.session_state.stage == "done":
         "mos": st.session_state.mos_results
     }
 
-    # Supabase
-    url = st.secrets["SUPABASE_URL"]
-    key = st.secrets["SUPABASE_KEY"]
-    supabase = create_client(url, key)
+    if "uploaded" not in st.session_state:
+        supabase = get_supabase()
+        response = supabase.table("user_study_results").insert({
+            "participant_id": st.session_state.username,
+            "data": final_output
+        }).execute()
 
-    response = supabase.table("user_study_results").insert({
-        "participant_id": st.session_state.username,
-        "data": final_output
-    }).execute()
-    st.session_state.uploaded = True
-
-    if response.data:
-        st.success("결과가 안전하게 저장되었습니다.")
+        if response.data:
+            st.success("결과가 저장되었습니다.")
+            st.session_state.uploaded = True
+        else:
+            st.error("저장 실패")
     else:
-        st.error("저장 실패")
+        st.success("결과가 이미 저장되었습니다.")
