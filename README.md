@@ -3,6 +3,6 @@
 ### Usage
 <pre>
 <code>
-streamlit run exp_app.py
+streamlit run exp_app_local.py
 </code>
 </pre>
