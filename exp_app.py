@@ -3,11 +3,11 @@ from datetime import datetime
 import os
 import streamlit as st
 import random
-from collections import defaultdict
+from supabase import create_client
 from utils import Q_HIVAU, Q_SeQA, AB_CRITERIA, format_ab_round
 
 
-st.set_page_config(page_title="User Study - MOS Experiment", layout="wide")
+st.set_page_config(page_title="User Study", layout="wide")
 
 # -------------------------------
 # 초기 세션 설정
@@ -402,3 +402,29 @@ elif st.session_state.stage == "done":
         json.dump(final_output, f, indent=4, ensure_ascii=False)
 
     st.success("결과가 저장되었습니다.")
+
+elif st.session_state.stage == "done":
+
+    st.title("실험이 완료되었습니다.")
+    st.write("참여해주셔서 감사합니다.")
+
+    final_output = {
+        "ab_test": st.session_state.ab_results,
+        "mos": st.session_state.mos_results
+    }
+
+    # Supabase
+    url = st.secrets["SUPABASE_URL"]
+    key = st.secrets["SUPABASE_KEY"]
+    supabase = create_client(url, key)
+
+    response = supabase.table("user_study_results").insert({
+        "participant_id": st.session_state.username,
+        "data": final_output
+    }).execute()
+    st.session_state.uploaded = True
+
+    if response.data:
+        st.success("결과가 안전하게 저장되었습니다.")
+    else:
+        st.error("저장 실패")
