@@ -75,18 +75,8 @@ if st.session_state.stage == "start":
             st.error("Username을 입력해주세요.")
             st.stop()
 
-        today = datetime.now().strftime("%y%m%d")
-        filename = f"{today}_{st.session_state.username}.json"
-        result_dir = "./results"
-        os.makedirs(result_dir, exist_ok=True)
-
-        path = os.path.join(result_dir, filename)
-
-        # # 빈 파일 생성
-        # with open(path, "w") as f:
-        #     json.dump({}, f)
-
-        st.session_state.result_path = path
+        today = datetime.now().strftime("%y%m%d_%h%m")
+        st.session_state.username = f"{today}_{st.session_state.username}"
         st.session_state.stage = "exp_intro"
         st.rerun()
 
